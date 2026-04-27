@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+  
+  --color-dark-bg: #050805;
+  --color-dark-ink: #DAD7CD;
+  --color-dark-accent: #A3B18A;
+  --color-dark-glass: rgba(15, 22, 15, 0.6);
+  --color-dark-border: rgba(163, 177, 138, 0.15);
+  --color-dark-danger: #7D2E2E;
+}
+
+@layer base {
+  body {
+    @apply bg-dark-bg text-dark-ink font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4 {
+    @apply font-serif;
+  }
+}
+
+.glass {
+  @apply bg-dark-glass backdrop-blur-xl border border-dark-border;
+}
+
+.organic-card {
+  @apply bg-dark-glass backdrop-blur-xl border border-dark-border rounded-[32px] overflow-hidden transition-all duration-300;
+}
+
+.danger-zone {
+  @apply border-l-4 border-l-dark-danger bg-linear-to-r from-dark-danger/10 to-transparent;
+}
+
+.pill {
+  @apply px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-[0.15em];
+}
